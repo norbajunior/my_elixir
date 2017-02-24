@@ -4,6 +4,7 @@ defmodule MyList2 do
     if func.(head), do: all?(tail, func), else: false
   end
 
+  def each([], func), do: []
   def each([head], func), do: func.(head)
   def each([head | tail], func) do
     func.(head)

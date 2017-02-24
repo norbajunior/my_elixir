@@ -15,4 +15,9 @@ defmodule MyList2Test do
     assert MyList2.filter(list, &(&1 > 5)), [6, 7, 8]
     assert MyList2.filter([], &(&1 > 5)), []
   end
+
+  test "#each function", %{ list: list } do
+    !assert MyList2.each(list, &(&1)), []
+    assert MyList2.each([], &(&1)), []
+  end
 end
