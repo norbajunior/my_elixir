@@ -16,7 +16,7 @@ defmodule MyEnumTest do
     assert MyEnum.filter([], &(&1 > 5)), []
   end
 
-  test "#each function", %{ list: list } do
+  test "#each that iterates trough the elements list", %{ list: list } do
     !assert MyEnum.each(list, &(&1)), []
     assert MyEnum.each([], &(&1)), []
   end
