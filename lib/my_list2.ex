@@ -1,10 +1,8 @@
 defmodule MyList2 do
   def all?([], _), do: true
-  def all?([head | tail], func) do
-    if func.(head), do: all?(tail, func), else: false
-  end
+  def all?([head | tail], func), do: func.(head) && all?(tail, func)
 
-  def each([], func), do: []
+  def each([], _), do: []
   def each([head], func), do: func.(head)
   def each([head | tail], func) do
     func.(head)
