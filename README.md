@@ -1,24 +1,18 @@
 # MyList2
 
-**TODO: Add description**
+**An Elixir project that aims just for practicing the language by rewriting some of its module functions**
 
-## Installation
+## Functions already implemented:
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+- Enum.all?/2
+- Enum.each/2
+- Enum.filter/2
 
-  1. Add `my_list2` to your list of dependencies in `mix.exs`:
+## TODO:
 
-    ```elixir
-    def deps do
-      [{:my_list2, "~> 0.1.0"}]
-    end
-    ```
+- Enum.split/2
+- Enum.take/2
 
-  2. Ensure `my_list2` is started before your application:
+### Contribute:
 
-    ```elixir
-    def application do
-      [applications: [:my_list2]]
-    end
-    ```
-
+If you would like to see some specific function implementation that is not here yet, please open a PR by adding a new function on the TODO list above or maybe open a PR of your own implementation.
