@@ -1,4 +1,4 @@
-# An Elixir project that aims just for practicing the language by rewriting some of its module functions**
+An Elixir project that aims just for practicing the language by rewriting some of its module functions
 
 ## Functions already implemented:
 
