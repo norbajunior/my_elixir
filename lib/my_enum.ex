@@ -25,9 +25,9 @@ defmodule MyEnum do
   end
   def split(list, at), do: _split(list, [], at)
 
-  def _split([], left, _),    do: { reverse(left), [] }
-  def _split(right, left, 0), do: { reverse(left), right }
-  def _split([ head | tail ], left, at) do
+  defp _split([], left, _),    do: { reverse(left), [] }
+  defp _split(right, left, 0), do: { reverse(left), right }
+  defp _split([ head | tail ], left, at) do
     _split(tail, [ head | left ], at-1)
   end
 
