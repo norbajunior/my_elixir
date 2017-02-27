@@ -53,4 +53,14 @@ defmodule MyEnumTest do
       # TODO: assert MyEnum.split(list, -6) == { [], [4, 5, 6, 7, 8] }
     end
   end
+
+  describe "MyEnum.reverse/1" do
+    test "reverts the order of a list", %{ list: list } do
+      assert MyEnum.reverse(list) == [8, 7, 6, 5, 4]
+    end
+
+    test "returns an empty list when given an empty one" do
+      assert MyEnum.reverse([]) == []
+    end
+  end
 end

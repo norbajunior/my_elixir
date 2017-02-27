@@ -24,9 +24,15 @@ defmodule MyEnum do
     _split(list, [], length(list) - -(count))
   end
   def split(list, count), do: _split(list, [], count)
-  def _split([], left, _), do: { Enum.reverse(left), [] }
-  def _split(right, left, 0),     do: { Enum.reverse(left), right }
+  def _split([], left, _), do: { reverse(left), [] }
+  def _split(right, left, 0),     do: { reverse(left), right }
   def _split([ head | tail ], left, count) do
     _split(tail, [ head | left ], count-1)
   end
+
+  def reverse([]), do: []
+  def reverse([ _head | _tail ] = list), do: _reverse(list, [])
+
+  defp _reverse([], new), do: new
+  defp _reverse([ head | tail ], new), do: _reverse(tail, [ head | new ])
 end
