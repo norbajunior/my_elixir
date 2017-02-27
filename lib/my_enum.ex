@@ -31,6 +31,10 @@ defmodule MyEnum do
     _split(tail, [ head | left ], at-1)
   end
 
+  def take([], _), do: []
+  def take(_, 0),  do: []
+  def take([ head | tail ], at), do: [ head | take(tail, at-1) ]
+
   def reverse([]), do: []
   def reverse([ _head | _tail ] = list), do: _reverse(list, [])
 

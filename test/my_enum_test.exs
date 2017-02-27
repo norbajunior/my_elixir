@@ -63,4 +63,12 @@ defmodule MyEnumTest do
       assert MyEnum.reverse([]) == []
     end
   end
+
+  describe "MyEnum.take/2" do
+    test "returns a new list splited at the *at* given", %{ list: list } do
+      assert MyEnum.take(list, 3) == [4, 5, 6]
+      assert MyEnum.take(list, 5) == [4, 5, 6, 7, 8]
+      assert MyEnum.take(list, 6) == [4, 5, 6, 7, 8]
+    end
+  end
 end
