@@ -5,10 +5,11 @@ An Elixir project that aims just for practicing the language by rewriting some o
 - Enum.all?/2
 - Enum.each/2
 - Enum.filter/2
+- Enum.split/2
 
 ## TODO:
 
-- Enum.split/2
+- Enum.reverse/1
 - Enum.take/2
 - Enum.flatten/1
 

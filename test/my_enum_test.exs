@@ -25,4 +25,13 @@ defmodule MyEnumTest do
 
     assert capture_io(func) == "4\n5\n6\n7\n8\n"
   end
+
+  describe "MyEnum.split/2" do
+    test "splits in two a list leaving `count` elements in the first one", %{ list: list } do
+      assert MyEnum.split(list, 3) == { [4, 5, 6], [7, 8] }
+      assert MyEnum.split([], 3) == { [], [] }
+      assert MyEnum.split(list, -2) == { [4, 5, 6], [7, 8] }
+      # TODO: assert MyEnum.split(list, -6) == { [], [4, 5, 6, 7, 8] }
+    end
+  end
 end
