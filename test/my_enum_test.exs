@@ -2,6 +2,8 @@ defmodule MyEnumTest do
   use ExUnit.Case
   doctest MyEnum
 
+  import ExUnit.CaptureIO
+
   setup_all do
     { :ok, [ list: [4, 5, 6, 7, 8] ] }
   end
@@ -17,7 +19,10 @@ defmodule MyEnumTest do
   end
 
   test "#each invokes the given `func` for each item in the enumerable.", %{ list: list } do
-    assert MyEnum.each(list, &(&1)) !== []
-    assert MyEnum.each([], &(&1)) == []
+    func = fn ->
+      assert MyEnum.each(list, &IO.puts/1) == :ok
+    end
+
+    assert capture_io(func) == "4\n5\n6\n7\n8\n"
   end
 end

@@ -2,7 +2,7 @@ defmodule MyEnum do
   def all?([], _), do: true
   def all?([head | tail], func), do: func.(head) && all?(tail, func)
 
-  def each([], _), do: []
+  def each([], _), do: :ok
   def each([head], func), do: func.(head)
   def each([head | tail], func) do
     func.(head)
