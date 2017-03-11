@@ -8,10 +8,9 @@ An Elixir project that aims just for practicing the language by rewriting some o
 - Enum.split/2
 - Enum.reverse/1
 - Enum.take/2
+- Enum.flatten/1
 
 ## TODO:
-
-- Enum.flatten/1
 
 ### Contribute:
 

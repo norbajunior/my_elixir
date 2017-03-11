@@ -71,4 +71,14 @@ defmodule MyEnumTest do
       assert MyEnum.take(list, 6) == [4, 5, 6, 7, 8]
     end
   end
+
+  describe "MyEnum.flatten/1" do
+    test "takes a list with sublists to any depth and returns a new one flattened" do
+      list_with_sublists = [[1, [10, 20, 30]],[2, 3, [4, [90, [23, [45]]]]]]
+
+      assert MyEnum.flatten(list_with_sublists) == [1, 10, 20, 30, 2, 3, 4, 90, 23, 45]
+      assert MyEnum.flatten([]) == []
+      assert MyEnum.flatten([1,2,3,4]) == [1,2,3,4]
+    end
+  end
 end

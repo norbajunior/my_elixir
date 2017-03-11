@@ -40,4 +40,13 @@ defmodule MyEnum do
 
   defp _reverse([], new), do: new
   defp _reverse([ head | tail ], new), do: _reverse(tail, [ head | new ])
+
+  def flatten([]), do: []
+  def flatten([_ | _] = list), do: _flatten(list, [])
+
+  defp _flatten([], flattened_list), do: flattened_list
+  defp _flatten([head | tail], flattened_list) do
+    _flatten(head, _flatten(tail, flattened_list))
+  end
+  defp _flatten(x, flattened_list), do: [ x | flattened_list ]
 end
